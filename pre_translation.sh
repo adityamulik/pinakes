@@ -1,5 +1,5 @@
 # Change Directory to clones
-cd pre_trams;atopm/files/_clones/pinakes/
+cd _clones/pinakes/
 
 # Install Python Packages & activate virtual env
 python3 -m venv extract-strings-env
