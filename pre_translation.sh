@@ -1,5 +1,3 @@
-pwd
-
 # Change Directory to clones
 cd _clones/pinakes/
 
