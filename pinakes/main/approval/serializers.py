@@ -12,9 +12,6 @@ from pinakes.main.approval.models import (
     Action,
 )
 from pinakes.main.approval.permissions import WorkflowPermission
-from pinakes.main.approval.services.create_request import (
-    CreateRequest,
-)
 from pinakes.main.approval.services.create_action import (
     CreateAction,
 )
@@ -132,6 +129,51 @@ class WorkflowSerializer(serializers.ModelSerializer):
         serializer = GroupRefSerializer(many=True, data=value)
         serializer.is_valid(raise_exception=True)
         return validations.validate_approver_groups(value)
+
+
+PLACEMENT_CHOICES = (
+    ("top", "top"),
+    ("bottom", "bottom"),
+)
+
+
+class RepositionSerializer(serializers.Serializer):
+    """
+    The desired increment relative to its current position,
+    or placement to top or bottom of the list.
+    """
+
+    increment = serializers.IntegerField(
+        required=False,
+        write_only=True,
+        help_text=(
+            "Move the record up (negative) or down (positive) in the list. "
+            "Upper workflows will be executed before lower ones"
+            "Do not set it if placement is used"
+        ),
+    )
+    placement = serializers.ChoiceField(
+        required=False,
+        choices=PLACEMENT_CHOICES,
+        help_text=(
+            "Place the record to the top or bottom of the list. The top "
+            "workflow will be executed first. Do not set it if increment "
+            "is used"
+        ),
+    )
+
+    def validate(self, data):
+        has_increment = "increment" in data
+        has_placement = "placement" in data
+        if has_increment and has_placement:
+            raise serializers.ValidationError(
+                {"increment and placement": "cannot both present in the body"}
+            )
+        if has_increment or has_placement:
+            return data
+        raise serializers.ValidationError(
+            {"increment or placement": "either one is needed in the body"}
+        )
 
 
 class TagResourceSerializer(serializers.Serializer):
@@ -340,31 +382,6 @@ class RequestSerializer(serializers.ModelSerializer):
             )
             return serializer.data
         return None
-
-
-class RequestInSerializer(serializers.Serializer):
-    """Input parameters for approval request object"""
-
-    name = serializers.CharField(
-        required=True, help_text="Name of the the request to be created"
-    )
-    description = serializers.CharField(
-        required=False, help_text="Describe the request in more details"
-    )
-    content = serializers.JSONField(
-        required=True, help_text="Content of the request in JSON format"
-    )
-    tag_resources = serializers.ListField(
-        child=TagResourceSerializer(many=False),
-        required=False,
-        help_text=(
-            "An array of resource tags that determine the workflows for the"
-            " request"
-        ),
-    )
-
-    def create(self, validated_data):
-        return CreateRequest(validated_data).process().request
 
 
 class ResourceObjectSerializer(serializers.Serializer):
