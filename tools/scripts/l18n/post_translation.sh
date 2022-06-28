@@ -6,10 +6,9 @@ cd _clones/pinakes/
 mv translations/zh_cn translations/zh
 
 # Create a directory for api (locale)
-# rm -rf locale
 mkdir locale
 
-# Copy all subdirectories to locale
+# Copy all subdirectories of translations to locale
 cp -r translations/ locale/
 
 # Loop over each directory and create another directory LC_Messages
@@ -22,18 +21,13 @@ for d in */ ; do
 done
 
 cd ..
-# echo $(pwd)
 
-
-# echo $pwd
-
-# cd to repository
-
-# cd _clones/
-
+# Variable for locales path
 pinakes_api_path="pinakes/locale" # locale will be dropped here
 
+# Overwrite existing files
 rsync -av locale/ $pinakes_api_path
 
+# Cleanup
 rm -rf translations/
 rm -rf locale/
