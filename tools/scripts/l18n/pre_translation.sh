@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Change Directory to clones
 cd _clones/pinakes/
 
@@ -12,4 +14,5 @@ source extract-strings-env/bin/activate && python3 manage.py makemessages -l en 
 # Move files to translations folder
 mv pinakes/locale/en/LC_MESSAGES/django.po translations/
 
-sleep 5
+# cleanup
+rm -rf extract-strings-env

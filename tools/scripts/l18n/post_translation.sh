@@ -1,39 +1,45 @@
 #!/bin/bash
 
+# Change Directory to clones
 cd _clones/pinakes/
 
 # Rename the zh_cn folder 
 mv translations/zh_cn translations/zh
 
 # Create a directory for api (locale)
-# rm -rf locale
 mkdir locale
 
 # Copy all subdirectories to locale
 cp -r translations/ locale/
 
+# Install Python Packages & activate virtual env
+python3 -m venv extract-strings-env
+source extract-strings-env/bin/activate
+pip3 install -r requirements.txt
+
+# Extract MO String
+source extract-strings-env/bin/activate && python3 manage.py compilemessages --ignore "extract-strings-env/*" --ignore "venv/*"
+
+# Move files to translations folder
+cp pinakes/locale/en/LC_MESSAGES/django.mo locale/
+
 # Loop over each directory and create another directory LC_Messages
-# Move django.po files to LC_Messages and remove messages.po
+# Move django.po & django.mo files to LC_Messages
 cd locale/
 for d in */ ; do
     dir=${d%*/}
     mkdir $dir/LC_MESSAGES
     mv $dir/django.po $dir/LC_MESSAGES/
+    cp django.mo $dir/LC_MESSAGES/
 done
 
 cd ..
-# echo $(pwd)
-
-
-# echo $pwd
-
-# cd to repository
-
-# cd _clones/
 
 pinakes_api_path="pinakes/locale" # locale will be dropped here
 
 rsync -av locale/ $pinakes_api_path
 
+# # cleanup
+rm -rf extract-strings-env
 rm -rf translations/
 rm -rf locale/
