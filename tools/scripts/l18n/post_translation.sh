@@ -17,8 +17,11 @@ python3 -m venv extract-strings-env
 source extract-strings-env/bin/activate
 pip3 install -r requirements.txt
 
+# Set temporary/ random secret key for pinakes
+export PINAKES_SECRET_KEY=$RANDOM  
+
 # Extract MO String
-source extract-strings-env/bin/activate && python3 manage.py compilemessages --ignore "extract-strings-env/*" --ignore "venv/*"
+python3 manage.py compilemessages --ignore "extract-strings-env/*" --ignore "venv/*"
 
 # Move files to translations folder
 cp pinakes/locale/en/LC_MESSAGES/django.mo locale/
