@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-27 20:51-0400\n"
+"POT-Creation-Date: 2022-06-10 14:54-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -232,7 +232,7 @@ msgstr "组 id {} 不存在"
 msgid "Group {} does not have approver role"
 msgstr "group {} 没有批准角色"
 
-#: pinakes/main/approval/views.py:186
+#: pinakes/main/approval/views.py:188
 msgid "Insufficient resource object params: {}"
 msgstr "不足的资源对象参数：{}"
 
@@ -324,11 +324,11 @@ msgstr "拒绝"
 msgid "failed"
 msgstr "失败"
 
-#: pinakes/main/catalog/serializers.py:410
+#: pinakes/main/catalog/serializers.py:407
 msgid "Order"
 msgstr "订购"
 
-#: pinakes/main/catalog/serializers.py:411
+#: pinakes/main/catalog/serializers.py:408
 msgid "OrderItem"
 msgstr "OrderItem"
 
@@ -412,7 +412,7 @@ msgstr "提交请求以批准订购 {} 失败，错误：{}"
 #: pinakes/main/catalog/services/validate_order_item.py:45
 msgid ""
 "The underlying survey on product {} in the portfolio {} has been changed and "
-"is no longer valid, please contact an administrator to reset it."
+"is no longer valid, please contact an administrator to fix it."
 msgstr "产品组合 {} 中的产品 {} 的底层调查已更改，不再有效，请联系您的管理员进行修复。"
 
 #: pinakes/main/catalog/views.py:521
@@ -518,4 +518,3 @@ msgstr "InProgress"
 #: pinakes/main/models.py:68
 msgid "Unknown"
 msgstr "未知"
-
