@@ -12,16 +12,16 @@ mkdir locale
 # Copy all subdirectories to locale
 cp -r translations/ locale/
 
-# # Install Python Packages & activate virtual env
-# python3 -m venv extract-strings-env
-# source extract-strings-env/bin/activate
-# pip3 install -r requirements.txt
+# Install Python Packages & activate virtual env
+python3 -m venv extract-strings-env
+source extract-strings-env/bin/activate
+pip3 install -r requirements.txt
 
-# # Set temporary/ random secret key for pinakes
-# export PINAKES_SECRET_KEY=$RANDOM  
+# Set temporary/ random secret key for pinakes
+export PINAKES_SECRET_KEY=$RANDOM  
 
-# # Extract MO String
-# python3 manage.py compilemessages --ignore "extract-strings-env/*" --ignore "venv/*"
+# Extract MO String
+python3 manage.py compilemessages --ignore "extract-strings-env/*" --ignore "venv/*"
 
 
 # Loop over each directory and create another directory LC_Messages
