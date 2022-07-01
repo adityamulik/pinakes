@@ -12,19 +12,17 @@ mkdir locale
 # Copy all subdirectories to locale
 cp -r translations/ locale/
 
-# Install Python Packages & activate virtual env
-python3 -m venv extract-strings-env
-source extract-strings-env/bin/activate
-pip3 install -r requirements.txt
+# # Install Python Packages & activate virtual env
+# python3 -m venv extract-strings-env
+# source extract-strings-env/bin/activate
+# pip3 install -r requirements.txt
 
-# Set temporary/ random secret key for pinakes
-export PINAKES_SECRET_KEY=$RANDOM  
+# # Set temporary/ random secret key for pinakes
+# export PINAKES_SECRET_KEY=$RANDOM  
 
-# Extract MO String
-python3 manage.py compilemessages --ignore "extract-strings-env/*" --ignore "venv/*"
+# # Extract MO String
+# python3 manage.py compilemessages --ignore "extract-strings-env/*" --ignore "venv/*"
 
-# Move files to translations folder
-cp pinakes/locale/en/LC_MESSAGES/django.mo locale/
 
 # Loop over each directory and create another directory LC_Messages
 # Move django.po & django.mo files to LC_Messages
@@ -33,7 +31,6 @@ for d in */ ; do
     dir=${d%*/}
     mkdir $dir/LC_MESSAGES
     mv $dir/django.po $dir/LC_MESSAGES/
-    cp django.mo $dir/LC_MESSAGES/
 done
 
 cd ..
