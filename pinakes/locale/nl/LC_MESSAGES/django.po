@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-27 20:51-0400\n"
+"POT-Creation-Date: 2022-06-10 14:54-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -232,7 +232,7 @@ msgstr "Groeps-ID {} bestaat niet"
 msgid "Group {} does not have approver role"
 msgstr "Groep {} heeft geen goedkeurdersrol"
 
-#: pinakes/main/approval/views.py:186
+#: pinakes/main/approval/views.py:188
 msgid "Insufficient resource object params: {}"
 msgstr "Onvoldoende resource-object params: {}"
 
@@ -324,11 +324,11 @@ msgstr "geweigerd"
 msgid "failed"
 msgstr "mislukt"
 
-#: pinakes/main/catalog/serializers.py:410
+#: pinakes/main/catalog/serializers.py:407
 msgid "Order"
 msgstr "Bestellen"
 
-#: pinakes/main/catalog/serializers.py:411
+#: pinakes/main/catalog/serializers.py:408
 msgid "OrderItem"
 msgstr "OrderItem"
 
@@ -412,7 +412,7 @@ msgstr "Indienen van verzoek tot goedkeuring voor bestelling {} mislukt, fout: {
 #: pinakes/main/catalog/services/validate_order_item.py:45
 msgid ""
 "The underlying survey on product {} in the portfolio {} has been changed and "
-"is no longer valid, please contact an administrator to reset it."
+"is no longer valid, please contact an administrator to fix it."
 msgstr "De onderliggende enquête voor product {} in de portefeuille {} is gewijzigd en is niet langer geldig, neem contact op met een beheerder om het te herstellen."
 
 #: pinakes/main/catalog/views.py:521
@@ -518,4 +518,3 @@ msgstr "InProgress"
 #: pinakes/main/models.py:68
 msgid "Unknown"
 msgstr "Onbekend"
-
