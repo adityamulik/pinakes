@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-27 20:51-0400\n"
+"POT-Creation-Date: 2022-06-10 14:54-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -232,7 +232,7 @@ msgstr "Id Group {} n’existe pas"
 msgid "Group {} does not have approver role"
 msgstr "Le group {} ne possède pas de rôle d’approbation"
 
-#: pinakes/main/approval/views.py:186
+#: pinakes/main/approval/views.py:188
 msgid "Insufficient resource object params: {}"
 msgstr "Paramètres d’objets de ressources insuffisants: {}"
 
@@ -324,11 +324,11 @@ msgstr "refusée"
 msgid "failed"
 msgstr "Échec"
 
-#: pinakes/main/catalog/serializers.py:410
+#: pinakes/main/catalog/serializers.py:407
 msgid "Order"
 msgstr "Commande"
 
-#: pinakes/main/catalog/serializers.py:411
+#: pinakes/main/catalog/serializers.py:408
 msgid "OrderItem"
 msgstr "Article de commande"
 
@@ -412,7 +412,7 @@ msgstr "N’a pas pu soumettre de demande d’approbation pour la Commande {}, e
 #: pinakes/main/catalog/services/validate_order_item.py:45
 msgid ""
 "The underlying survey on product {} in the portfolio {} has been changed and "
-"is no longer valid, please contact an administrator to reset it."
+"is no longer valid, please contact an administrator to fix it."
 msgstr "Le questionnaire latent au produit {} qui se trouve dans le portefeuille {} n’a pas changé et n’est plus valide. Veuillez contacter un administrateur pour le corriger."
 
 #: pinakes/main/catalog/views.py:521
@@ -518,4 +518,3 @@ msgstr "EnCours"
 #: pinakes/main/models.py:68
 msgid "Unknown"
 msgstr "Inconnu"
-
