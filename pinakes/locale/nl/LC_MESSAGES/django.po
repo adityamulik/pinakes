@@ -7,13 +7,47 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-10 14:54-0400\n"
+"POT-Creation-Date: 2022-07-05 07:14-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: pinakes/common/auth/keycloak_django/authentication.py:76
+msgid "Invalid authorization header. No credentials provided."
+msgstr "Ongeldige tokenheader. Geen referenties verschaft."
+
+#: pinakes/common/auth/keycloak_django/authentication.py:80
+msgid ""
+"Invalid authorization header. Credentials string should not contain spaces."
+msgstr "Ongeldige autorisatie header. Credentials string mag geen spaties bevatten."
+
+#: pinakes/common/auth/keycloak_django/authentication.py:107
+msgid "No valid JWK found."
+msgstr "Geen geldige JWK gevonden."
+
+#: pinakes/common/auth/keycloak_django/authentication.py:119
+msgid "Signature has expired."
+msgstr "Licentie is verlopen."
+
+#: pinakes/common/auth/keycloak_django/authentication.py:121
+msgid "Invalid claims."
+msgstr "Ongeldige claims."
+
+#: pinakes/common/auth/keycloak_django/authentication.py:123
+msgid "Invalid signature."
+msgstr "Ongeldige handtekening."
+
+#: pinakes/common/auth/keycloak_django/authentication.py:163
+msgid "Token expired"
+msgstr "Token verlopen"
+
+#: pinakes/common/auth/keycloak_django/authentication.py:168
+#: pinakes/common/auth/keycloak_django/authentication.py:172
+msgid "Invalid audience"
+msgstr "Ongeldig publiek"
 
 #: pinakes/common/exception_handler.py:27
 msgid "Internal Error"
@@ -163,6 +197,14 @@ msgstr "Groep heeft geen goedkeurdersrol"
 msgid "Group does not exist"
 msgstr "Groep bestaat niet"
 
+#: pinakes/main/approval/exceptions.py:38
+msgid "There are resource objects linked to the workflow"
+msgstr "Er zijn resource-objecten gekoppeld aan de workflow"
+
+#: pinakes/main/approval/exceptions.py:43
+msgid "Workflow is in use"
+msgstr "Workflow is in gebruik"
+
 #: pinakes/main/approval/services/create_action.py:49
 msgid "The memo message cannot be blank"
 msgstr "Het memobericht kan niet blanco zijn"
@@ -224,17 +266,21 @@ msgstr "Groep {} e-mailen mislukt"
 msgid "Auto-approved"
 msgstr "Automatisch goedgekeurd"
 
-#: pinakes/main/approval/validations.py:56
+#: pinakes/main/approval/validations.py:58
 msgid "Group id {} does not exist"
 msgstr "Groeps-ID {} bestaat niet"
 
-#: pinakes/main/approval/validations.py:64
+#: pinakes/main/approval/validations.py:66
 msgid "Group {} does not have approver role"
 msgstr "Groep {} heeft geen goedkeurdersrol"
 
-#: pinakes/main/approval/views.py:188
+#: pinakes/main/approval/views.py:186
 msgid "Insufficient resource object params: {}"
 msgstr "Onvoldoende resource-object params: {}"
+
+#: pinakes/main/auth/views.py:58
+msgid "Logout is not supported with Bearer auth."
+msgstr "Uitloggen wordt niet ondersteund met Bearer auth."
 
 #: pinakes/main/catalog/exceptions.py:8
 msgid "Bad query parameters"
@@ -324,11 +370,11 @@ msgstr "geweigerd"
 msgid "failed"
 msgstr "mislukt"
 
-#: pinakes/main/catalog/serializers.py:407
+#: pinakes/main/catalog/serializers.py:410
 msgid "Order"
 msgstr "Bestellen"
 
-#: pinakes/main/catalog/serializers.py:408
+#: pinakes/main/catalog/serializers.py:411
 msgid "OrderItem"
 msgstr "OrderItem"
 
@@ -412,7 +458,7 @@ msgstr "Indienen van verzoek tot goedkeuring voor bestelling {} mislukt, fout: {
 #: pinakes/main/catalog/services/validate_order_item.py:45
 msgid ""
 "The underlying survey on product {} in the portfolio {} has been changed and "
-"is no longer valid, please contact an administrator to fix it."
+"is no longer valid, please contact an administrator to reset it."
 msgstr "De onderliggende enquête voor product {} in de portefeuille {} is gewijzigd en is niet langer geldig, neem contact op met een beheerder om het te herstellen."
 
 #: pinakes/main/catalog/views.py:521
@@ -518,3 +564,4 @@ msgstr "InProgress"
 #: pinakes/main/models.py:68
 msgid "Unknown"
 msgstr "Onbekend"
+
